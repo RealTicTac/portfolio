@@ -4,6 +4,8 @@ import Link from "next/link";
 import { AiOutlineClose, AiOutlineMenu, AiOutlineMail } from "react-icons/ai";
 import { FaGithub } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+import Contact from "./Contact";
+import ContactIcon from "./ContactIcon";
 
 const NavBar = () => {
   const [nav, setNav] = React.useState(false);
@@ -48,14 +50,16 @@ const NavBar = () => {
       </div>
       <div
         className={
-          nav ? "md:hidden fixed left-0 top-0 w-full h-screen bg-black/70" : ""
+          nav
+            ? "md:hidden fixed left-0 top-0 w-full h-screen bg-black/70 ease-in duration-300 transition-all"
+            : ""
         }
       >
         <div
           className={
             nav
               ? "fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[40%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500"
-              : "fixed left-[-100%] top-0 p-10 ease-in duration-500"
+              : "fixed left-[-100%] top-0 p-10 ease-in duration-300"
           }
         >
           <div>
@@ -102,15 +106,15 @@ const NavBar = () => {
                 Я в интернете
               </p>
               <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
-                <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-ppointer hover:scale-125 ease-in duration-300">
+                <ContactIcon>
                   <FaGithub />
-                </div>
-                <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-ppointer hover:scale-125 ease-in duration-300">
+                </ContactIcon>
+                <ContactIcon>
                   <AiOutlineMail />
-                </div>
-                <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-ppointer hover:scale-125 ease-in duration-300">
+                </ContactIcon>
+                <ContactIcon>
                   <BsFillPersonLinesFill />
-                </div>
+                </ContactIcon>
               </div>
             </div>
           </div>

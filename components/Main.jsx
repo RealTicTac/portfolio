@@ -2,6 +2,7 @@ import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
+import ContactIcon from "./ContactIcon";
 
 const Main = () => {
   return (
@@ -20,15 +21,15 @@ const Main = () => {
             Web-приложений.
           </p>
           <div className="flex items-center justify-between max-w-[330px] m-auto py-4">
-            <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-ppointer hover:scale-125 ease-in duration-300">
+            <ContactIcon>
               <FaGithub />
-            </div>
-            <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-ppointer hover:scale-125 ease-in duration-300">
+            </ContactIcon>
+            <ContactIcon>
               <AiOutlineMail />
-            </div>
-            <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-ppointer hover:scale-125 ease-in duration-300">
+            </ContactIcon>
+            <ContactIcon>
               <BsFillPersonLinesFill />
-            </div>
+            </ContactIcon>
           </div>
         </div>
       </div>
