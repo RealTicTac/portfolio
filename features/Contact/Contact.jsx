@@ -10,9 +10,9 @@ import FormInput from "./FormInput";
 
 const Contact = () => {
   return (
-    <div className="w-full lg:h-screen">
+    <div className="w-full lg:h-screen" id="contact">
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
-        <p className="text-xl tracking-widest uppercase text-[#5651e5]">
+        <p className="text-xl tracking-widest uppercase text-primary">
           Связаться
         </p>
         <h2 className="py-4">Для связи</h2>
@@ -70,7 +70,7 @@ const Contact = () => {
         <Link href="/">
           <a>
             <ContactIcon>
-              <HiOutlineChevronDoubleUp className="text-[#5651e5]" size={30} />
+              <HiOutlineChevronDoubleUp className="text-primary" size={30} />
             </ContactIcon>
           </a>
         </Link>

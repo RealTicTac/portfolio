@@ -40,20 +40,20 @@ const NavBar = () => {
                 Главная
               </li>
             </Link>
-            <Link href="/">
+            <Link href="/#about">
               <li className="ml-10 text-sm uppercase hover:border-b">
                 Обо мне
               </li>
             </Link>
-            <Link href="/">
+            <Link href="/#skills">
               <li className="ml-10 text-sm uppercase hover:border-b">Умения</li>
             </Link>
-            <Link href="/">
+            <Link href="/#projects">
               <li className="ml-10 text-sm uppercase hover:border-b">
                 Проекты
               </li>
             </Link>
-            <Link href="/">
+            <Link href="/#contact">
               <li className="ml-10 text-sm uppercase hover:border-b">
                 Связаться со мной
               </li>
@@ -102,23 +102,33 @@ const NavBar = () => {
           <div className="py-4 flex flex-col">
             <ul className="uppercase">
               <Link href="/">
-                <li className="py-4 text-sm">Главная</li>
+                <li className="py-4 text-sm" onClick={handleNav}>
+                  Главная
+                </li>
               </Link>
-              <Link href="/">
-                <li className="py-4 text-sm">Обо мне</li>
+              <Link href="/#about">
+                <li className="py-4 text-sm" onClick={handleNav}>
+                  Обо мне
+                </li>
               </Link>
-              <Link href="/">
-                <li className="py-4 text-sm">Умения</li>
+              <Link href="/#skills">
+                <li className="py-4 text-sm" onClick={handleNav}>
+                  Умения
+                </li>
               </Link>
-              <Link href="/">
-                <li className="py-4 text-sm">Проекты</li>
+              <Link href="/#projects">
+                <li className="py-4 text-sm" onClick={handleNav}>
+                  Проекты
+                </li>
               </Link>
-              <Link href="/">
-                <li className="py-4 text-sm">Связаться</li>
+              <Link href="/#contact">
+                <li className="py-4 text-sm" onClick={handleNav}>
+                  Связаться
+                </li>
               </Link>
             </ul>
             <div className="pt-40">
-              <p className="uppercase tracking-widest text-[#5651e5]">
+              <p className="uppercase tracking-widest text-primary">
                 Я в интернете
               </p>
               <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
