@@ -48,14 +48,14 @@ const Contact = () => {
     console.log(data);
   };
   return (
-    <div className="w-full lg:h-screen" id="contact">
-      <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
+    <div className="w-full dark:bg-dark dark:text-light" id="contact">
+      <div className="max-w-[1240px] m-auto px-2 py-16 w-full ">
         <p className="text-xl tracking-widest uppercase text-primary">
           Связаться
         </p>
         <h2 className="py-4">Для связи</h2>
         <div className="grid lg:grid-cols-5 gap-8">
-          <div className="col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 rounded-xl p-4">
+          <div className="col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 dark:shadow-gray-600 rounded-xl p-4">
             <div className="lg:p-4 h-full">
               <div>
                 <img
@@ -86,7 +86,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4">
+          <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 dark:shadow-gray-600 rounded-xl lg:p-4">
             <div className="py-4">
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="grid md:grid-cols-2 gap-4 w-full py-2">
@@ -127,7 +127,7 @@ const Contact = () => {
                   errors={errors}
                   register={register}
                 />
-                <button className="w-full p-4 text-gray-300 mt-4">
+                <button className="w-full p-4 text-gray-300 dark:text-light mt-4 shadow-none dark:from-purple-500 dark:to-purple-700">
                   Отправить сообщение
                 </button>
               </form>

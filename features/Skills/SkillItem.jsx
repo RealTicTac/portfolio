@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const SkillItem = ({ imageUrl, title }) => {
   return (
-    <div className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300">
+    <div className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 dark:bg-gray-400 dark:text-dark">
       <div className="grid grid-cols-2 gap-4 justify-center items-center">
         <div className="m-auto">
           <Image src={imageUrl} alt="html" width="64px" height="64px" />

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const ProjectItem = ({ imageUrl, title, stack, href }) => {
   return (
-    <div className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 rounded-xl p-4 group hover:bg-gradient-to-r from-primary to-[#709dff]">
+    <div className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-500 rounded-xl p-4 group hover:bg-gradient-to-r from-primary dark:from-gray-500  to-secondary dark:to-gray-700">
       <Image
         className="rounded-xl group-hover:opacity-10"
         src={imageUrl}
@@ -16,7 +16,7 @@ const ProjectItem = ({ imageUrl, title, stack, href }) => {
         </h3>
         <p className="pb-4 pt-2 text-white text-center">{stack}</p>
         <Link href={href}>
-          <p className="text-center p-3 rounded-lg bg-white text-gray-700 font-bold text-lg cursor-pointer">
+          <p className="text-center p-3 rounded-lg bg-white dark:bg-dark dark:text-light text-gray-700 font-bold text-lg cursor-pointer">
             Подробнее
           </p>
         </Link>
