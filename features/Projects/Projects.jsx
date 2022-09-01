@@ -17,7 +17,7 @@ const Projects = () => {
             imageUrl={projectPic}
             title="lorem"
             stack="react"
-            href="/storeproject"
+            href="/store"
           />
         </div>
       </div>
