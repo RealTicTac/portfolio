@@ -6,7 +6,10 @@ import ContactIcon from "../Contact/ContactIcon";
 
 const Main = () => {
   return (
-    <div className="w-full h-screen text-center dark:bg-dark" id="main">
+    <div
+      className="w-full h-screen text-center dark:bg-dark ease-in-out duration-700 transition-colors"
+      id="main"
+    >
       <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
         <div className="dark:text-light ">
           <p className="uppercase text-sm tracking-widest text-gray-600 dark:text-gray-400">

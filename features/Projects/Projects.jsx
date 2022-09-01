@@ -6,7 +6,10 @@ import ProjectItem from "./ProjectItem";
 
 const Projects = () => {
   return (
-    <div className="w-full dark:bg-dark dark:text-light" id="projects">
+    <div
+      className="w-full dark:bg-dark dark:text-light ease-in-out duration-700 transition-colors"
+      id="projects"
+    >
       <div className="max-w-[1240px] mx-auto px-2 py-16">
         <p className="text-xl tracking-widest uppercase text-primary">
           Проекты

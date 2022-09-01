@@ -14,7 +14,7 @@ const FormInput = ({
     <div className="flex flex-col">
       <label className="uppercase text-sm py-2">{label}</label>
       <Type
-        className={`border-2 rounded-lg p-3 flex border-gray-300 dark:bg-dark dark:text-light dark:border-gray-600 ${additionalStyles}`}
+        className={`ease-in-out duration-700 transition-colors border-2 rounded-lg p-3 flex border-gray-300 dark:bg-dark dark:text-light dark:border-gray-600 ${additionalStyles}`}
         {...register(name)}
         {...otherProps}
       />

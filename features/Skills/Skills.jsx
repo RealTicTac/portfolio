@@ -5,7 +5,7 @@ import SkillItem from "./SkillItem";
 const Skills = () => {
   return (
     <div
-      className="w-full lg:h-screen p-2 dark:bg-dark dark:text-light"
+      className="w-full lg:h-screen p-2 dark:bg-dark dark:text-light ease-in-out duration-700 transition-colors"
       id="skills"
     >
       <div className="max-w-[1240px] mx-auto flex flex-col justify-center h-full">

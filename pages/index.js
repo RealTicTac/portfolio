@@ -7,7 +7,7 @@ import Contact from "features/Contact/Contact";
 
 export default function Home() {
   return (
-    <div>
+    <div className="dark:bg-dark duration-700 ease-in-out transition-colors">
       <Head>
         <title>Rais | Front-end developer</title>
       </Head>

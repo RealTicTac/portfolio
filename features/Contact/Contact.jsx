@@ -48,7 +48,10 @@ const Contact = () => {
     console.log(data);
   };
   return (
-    <div className="w-full dark:bg-dark dark:text-light" id="contact">
+    <div
+      className="w-full dark:bg-dark dark:text-light ease-in-out duration-700 transition-colors"
+      id="contact"
+    >
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full ">
         <p className="text-xl tracking-widest uppercase text-primary">
           Связаться

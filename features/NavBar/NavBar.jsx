@@ -9,10 +9,6 @@ import { BsFillPersonLinesFill, BsLightbulb, BsMoon } from "react-icons/bs";
 
 import ContactIcon from "../Contact/ContactIcon";
 import { ThemeContext } from "pages/_app";
-import useDarkmode from "hooks/useDarkmode";
-
-const bgColor = "#ecf0f3";
-const linkColor = "#1f2937";
 
 const NavBar = () => {
   const [nav, setNav] = React.useState(false);
@@ -48,11 +44,13 @@ const NavBar = () => {
   };
   return (
     <div
-      className={`${
-        shadow && !isDarkTheme
-          ? "fixed w-full h-20 shadow-xl z-[100]"
+      className={`ease-in-out duration-700 transition-colors ${
+        shadow
+          ? "fixed w-full h-20 shadow-xl z-[100] dark:shadow-gray-700"
           : "fixed w-full h-20  z-[100]"
-      } ${isProject ? "bg-transparent" : "bg-light dark:bg-dark"}`}
+      } ${
+        isProject ? "bg-transparent transition-none" : "bg-light dark:bg-dark"
+      }`}
     >
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
         <Image src="/../public/logo.png" alt="logo" width="125" height="50" />
@@ -92,7 +90,7 @@ const NavBar = () => {
             <AiOutlineMenu size={25} />
           </div>
           <div
-            className="hidden 2md:block rounded-full bg-light dark:bg-dark text-dark dark:text-light border border-gray-300 ml-2 p-2"
+            className="hidden 2md:block rounded-full bg-light dark:bg-dark text-dark dark:text-light border border-gray-300 dark:border-gray-500 ml-2 p-2 ease-in-out duration-700 transition-colors"
             onClick={handleDarkmode}
           >
             {isDarkTheme ? <BsLightbulb /> : <BsMoon />}
@@ -122,13 +120,13 @@ const NavBar = () => {
                 alt="logo"
               />
               <div
-                className="shadow-lg shadow-gray-400 ml-auto rounded-full bg-light dark:bg-dark text-dark dark:text-light dark:border dark:border-light p-3"
+                className="shadow-lg shadow-gray-400 ml-auto rounded-full bg-light dark:bg-dark text-dark dark:text-light dark:border dark:border-gray-500 p-3 ease-in-out duration-700 transition-colors"
                 onClick={handleDarkmode}
               >
                 {false ? <BsLightbulb /> : <BsMoon />}
               </div>
               <div
-                className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer dark:text-light dark:border dark:border-light"
+                className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer dark:text-light dark:border dark:border-gray-500"
                 onClick={handleNav}
               >
                 <AiOutlineClose />

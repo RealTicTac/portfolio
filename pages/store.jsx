@@ -8,9 +8,9 @@ import Link from "next/link";
 
 const store = () => {
   return (
-    <div className="w-full dark:bg-dark dark:text-light">
+    <div className="w-full dark:bg-dark dark:text-light h-[100vh] duration-700 ease-in-out transition-colors">
       <div className="w-screen h-[30vh] lg:h-[40vh] relative">
-        <div className="absolute top-0 left-0 w-full h-[30vh] lg:h-[40vh] bg-black/80 z-10" />
+        <div className="absolute top-0 left-0 w-full h-[30vh] lg:h-[40vh] bg-black/60 z-10" />
         <Image
           className="absolute z-1 "
           layout="fill"
