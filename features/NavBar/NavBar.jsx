@@ -2,20 +2,21 @@ import React, { useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useTheme } from "next-themes";
 
 import { AiOutlineClose, AiOutlineMenu, AiOutlineMail } from "react-icons/ai";
 import { FaGithub } from "react-icons/fa";
 import { BsFillPersonLinesFill, BsLightbulb, BsMoon } from "react-icons/bs";
 
 import ContactIcon from "../Contact/ContactIcon";
-import { ThemeContext } from "pages/_app";
 
 const NavBar = () => {
   const [nav, setNav] = React.useState(false);
   const [shadow, setShadow] = React.useState(false);
   const [isProject, setIsProject] = React.useState(false);
+  const [mounted, setMounted] = React.useState(false);
+  const { systemTheme, theme, setTheme } = useTheme();
   const router = useRouter();
-  const [isDarkTheme, setTheme] = useContext(ThemeContext);
 
   React.useEffect(() => {
     if (router.asPath.match(/\/\w+/)) {
@@ -34,32 +35,46 @@ const NavBar = () => {
     window.addEventListener("scroll", handleScroll);
   }, []);
 
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const handleNav = () => {
     setNav(!nav);
   };
 
   const handleDarkmode = () => {
-    localStorage.setItem("theme", `${!isDarkTheme ? "dark" : "light"}`);
-    setTheme((theme) => !theme);
+    localStorage.setItem("theme", `${theme === "dark" ? "light" : "dark"}`);
+    setTheme(localStorage.getItem("theme"));
   };
+
+  const themeToggle = () => {
+    const currentTheme = theme === systemTheme ? systemTheme : theme;
+    return (
+      <div
+        className="hidden 2md:block rounded-full bg-light dark:bg-dark text-dark dark:text-light border border-gray-300 dark:border-gray-500 ml-2 p-2 ease-in-out duration-700 transition-colors"
+        onClick={handleDarkmode}
+      >
+        {currentTheme === "dark" ? <BsLightbulb /> : <BsMoon />}
+      </div>
+    );
+  };
+
+  if (!mounted) return null;
   return (
     <div
-      className={`ease-in-out duration-700 transition-colors ${
+      className={`ease-in-out duration-700 transition-colors bg-light dark:bg-dark ${
         shadow
           ? "fixed w-full h-20 shadow-xl z-[100] dark:shadow-gray-700"
           : "fixed w-full h-20  z-[100]"
-      } ${
-        isProject ? "bg-transparent transition-none" : "bg-light dark:bg-dark"
-      }`}
+      } ${isProject ? "bg-transparent transition-none" : ""}`}
     >
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
         <Image src="/../public/logo.png" alt="logo" width="125" height="50" />
         <div className="flex items-center">
           <ul
             className={`hidden 2md:flex ${
-              isProject || isDarkTheme
-                ? "text-light dark:text-light"
-                : "text-dark"
+              isProject ? "text-light" : "text-dark dark:text-light"
             }`}
           >
             <Link href="/">
@@ -89,12 +104,7 @@ const NavBar = () => {
           <div className="2md:hidden dark:text-light" onClick={handleNav}>
             <AiOutlineMenu size={25} />
           </div>
-          <div
-            className="hidden 2md:block rounded-full bg-light dark:bg-dark text-dark dark:text-light border border-gray-300 dark:border-gray-500 ml-2 p-2 ease-in-out duration-700 transition-colors"
-            onClick={handleDarkmode}
-          >
-            {isDarkTheme ? <BsLightbulb /> : <BsMoon />}
-          </div>
+          {themeToggle()}
         </div>
       </div>
       <div
@@ -107,7 +117,7 @@ const NavBar = () => {
         <div
           className={
             nav
-              ? "fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[40%] h-screen bg-light dark:bg-dark p-10 ease-in duration-500"
+              ? "fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[40%] h-screen bg-light dark:bg-dark p-10 ease-in duration-300"
               : "fixed left-[-100%] top-0 p-10 ease-in duration-300"
           }
         >
@@ -120,10 +130,10 @@ const NavBar = () => {
                 alt="logo"
               />
               <div
-                className="shadow-lg shadow-gray-400 ml-auto rounded-full bg-light dark:bg-dark text-dark dark:text-light dark:border dark:border-gray-500 p-3 ease-in-out duration-700 transition-colors"
+                className="shadow-lg shadow-gray-400 ml-auto rounded-full  dark:bg-dark text-dark dark:text-light dark:border dark:border-gray-500 p-3 ease-in-out duration-700 transition-colors"
                 onClick={handleDarkmode}
               >
-                {false ? <BsLightbulb /> : <BsMoon />}
+                {theme === "dark" ? <BsLightbulb /> : <BsMoon />}
               </div>
               <div
                 className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer dark:text-light dark:border dark:border-gray-500"

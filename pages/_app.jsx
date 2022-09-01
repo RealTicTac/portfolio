@@ -1,24 +1,15 @@
-import React from "react";
+import { ThemeProvider } from "next-themes";
 
 import NavBar from "features/NavBar/NavBar";
-import useDarkmode from "hooks/useDarkmode";
 
 import "../styles/globals.css";
 
-export const ThemeContext = React.createContext();
-let initialState = false;
-if (typeof localStorage !== "undefined" && localStorage.theme === "dark") {
-  document.documentElement.classList.add("dark");
-  initialState = true;
-}
-
 function MyApp({ Component, pageProps }) {
-  const contextValue = useDarkmode(initialState);
   return (
-    <ThemeContext.Provider value={contextValue}>
+    <ThemeProvider attribute="class" enableSystem="true">
       <NavBar />
       <Component {...pageProps} />
-    </ThemeContext.Provider>
+    </ThemeProvider>
   );
 }
 
